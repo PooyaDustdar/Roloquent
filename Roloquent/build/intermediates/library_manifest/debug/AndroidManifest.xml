@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.dustdar.roloquent"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="28" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="ir.dustdar.roloquent" />
+
+    <application android:name="ir.dustdar.roloquent.G" >
+        <uses-library android:name="androidx.test.runner" />
+    </application>
+
+</manifest>

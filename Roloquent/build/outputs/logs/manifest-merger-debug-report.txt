@@ -1,0 +1,143 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/pooya/.gradle/caches/transforms-2/files-2.1/e32fa9dbfa3382ea04fee880e3bbfce7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/a4133839a4c5c119fe8419fca9fbb08b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/792f4f81455e029ed3a00ebf4e03cd7a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/31342e0426e50cb8d2bee454cdd5b7f0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/955304d587e5170849612a3bab781f63/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/1c17ca94a90a17168767228d98aef523/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/12191911991ce96063488a77dc3e6ff4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/21a008f6bc798d737d89312b256cbc9e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/30095d2f9e95e2ca398c0c81f6aa62e0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/5a8bd4c9a48728738e6c77ba095ac0fc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/1305d5baa7a9f6078604f911436343a1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/f6c74a5b3877481ffa1f65c97854a031/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c067acb4945848df4c3473ecfd8fc8aa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/abdd99616a57241b7b4991f844db8ada/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/7db0902c8306fe821a2b00b0a78d2965/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2c46141fb3f06f09a1b1356e56e2aa5/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c5340b2b41663fed544d35a6beda359c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/0b45eedba8c87b697961bc8d64b1a5f2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/3082aa1681f6f58449b5c52ca79ae4c4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/b80e5fd0b8ec15e62d952a6fd1923db3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/206307fb31dc547e1558e5db5a7764f6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/eb76d86801f0e7d0408f8dc15c81a4cf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/d38ce3974502de568db06acc76046e64/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2e1eef06cd2cac38c36c57e1d72b0aa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/fb93c6bca624f63e8800c5304f6ed71e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/abc80a26052a8b062bc21840e94e097e/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+	package
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:3:11-41
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:2:11-57
+	android:versionCode
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:1-15:12
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:5:5-14:47
+MERGED from [androidx.core:core:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/7db0902c8306fe821a2b00b0a78d2965/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/7db0902c8306fe821a2b00b0a78d2965/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2c46141fb3f06f09a1b1356e56e2aa5/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2c46141fb3f06f09a1b1356e56e2aa5/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/7db0902c8306fe821a2b00b0a78d2965/AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:11:13-39
+	android:label
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:9:13-45
+	android:fullBackupContent
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:14:13-45
+	tools:ignore
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:13:13-52
+	android:roundIcon
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:10:13-58
+	android:icon
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:8:13-47
+	android:allowBackup
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:7:13-39
+	android:theme
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:12:13-44
+	android:name
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml:6:13-30
+uses-sdk
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/pooya/.gradle/caches/transforms-2/files-2.1/e32fa9dbfa3382ea04fee880e3bbfce7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/pooya/.gradle/caches/transforms-2/files-2.1/e32fa9dbfa3382ea04fee880e3bbfce7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/a4133839a4c5c119fe8419fca9fbb08b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/a4133839a4c5c119fe8419fca9fbb08b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/792f4f81455e029ed3a00ebf4e03cd7a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/792f4f81455e029ed3a00ebf4e03cd7a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/31342e0426e50cb8d2bee454cdd5b7f0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/31342e0426e50cb8d2bee454cdd5b7f0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/955304d587e5170849612a3bab781f63/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/955304d587e5170849612a3bab781f63/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/1c17ca94a90a17168767228d98aef523/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/1c17ca94a90a17168767228d98aef523/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/12191911991ce96063488a77dc3e6ff4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/12191911991ce96063488a77dc3e6ff4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/21a008f6bc798d737d89312b256cbc9e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/21a008f6bc798d737d89312b256cbc9e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/30095d2f9e95e2ca398c0c81f6aa62e0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/30095d2f9e95e2ca398c0c81f6aa62e0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/5a8bd4c9a48728738e6c77ba095ac0fc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/5a8bd4c9a48728738e6c77ba095ac0fc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/1305d5baa7a9f6078604f911436343a1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/1305d5baa7a9f6078604f911436343a1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/f6c74a5b3877481ffa1f65c97854a031/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/f6c74a5b3877481ffa1f65c97854a031/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c067acb4945848df4c3473ecfd8fc8aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c067acb4945848df4c3473ecfd8fc8aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/abdd99616a57241b7b4991f844db8ada/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/abdd99616a57241b7b4991f844db8ada/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/7db0902c8306fe821a2b00b0a78d2965/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/pooya/.gradle/caches/transforms-2/files-2.1/7db0902c8306fe821a2b00b0a78d2965/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2c46141fb3f06f09a1b1356e56e2aa5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2c46141fb3f06f09a1b1356e56e2aa5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c5340b2b41663fed544d35a6beda359c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c5340b2b41663fed544d35a6beda359c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/0b45eedba8c87b697961bc8d64b1a5f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/0b45eedba8c87b697961bc8d64b1a5f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/3082aa1681f6f58449b5c52ca79ae4c4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/3082aa1681f6f58449b5c52ca79ae4c4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/b80e5fd0b8ec15e62d952a6fd1923db3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/b80e5fd0b8ec15e62d952a6fd1923db3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/206307fb31dc547e1558e5db5a7764f6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/206307fb31dc547e1558e5db5a7764f6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/eb76d86801f0e7d0408f8dc15c81a4cf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/eb76d86801f0e7d0408f8dc15c81a4cf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/d38ce3974502de568db06acc76046e64/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/d38ce3974502de568db06acc76046e64/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2e1eef06cd2cac38c36c57e1d72b0aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/c2e1eef06cd2cac38c36c57e1d72b0aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/fb93c6bca624f63e8800c5304f6ed71e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/fb93c6bca624f63e8800c5304f6ed71e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/abc80a26052a8b062bc21840e94e097e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/pooya/.gradle/caches/transforms-2/files-2.1/abc80a26052a8b062bc21840e94e097e/AndroidManifest.xml:20:5-44
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		ADDED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
+		INJECTED from /home/pooya/Desktop/MyApplication2/Roloquent/src/main/AndroidManifest.xml
