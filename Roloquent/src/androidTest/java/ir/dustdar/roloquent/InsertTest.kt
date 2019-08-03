@@ -14,8 +14,8 @@ class InsertTest {
     fun insertArrayOfItems() {
         Insert(
             arrayOf(
-                AddTableTest.TblTestIntegerLength(Integer(5)),
-                AddTableTest.TblTestIntegerLength(Integer(5))
+                AddTableTest.TblTestIntegerLength(Integer(5),"pooya","dustdar"),
+                AddTableTest.TblTestIntegerLength(Integer(6),"mohammad","nasrabadi")
             )
         )
     }
@@ -23,7 +23,7 @@ class InsertTest {
     @Test
     fun insertItem() {
         Insert(
-            AddTableTest.TblTestIntegerLength(Integer(5))
+            AddTableTest.TblTestIntegerLength(Integer(7),"ali","nasrabadi")
         )
     }
 

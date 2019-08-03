@@ -3,7 +3,7 @@ package ir.dustdar.roloquent
 
 class Delete(private val tblName: String) {
     private var Query: String? = null
-    private val connection = Connection.sqLiteDatabase
+    private val connection = Connection.db
 
     init {
         Query = "DELETE FROM `$tblName` "

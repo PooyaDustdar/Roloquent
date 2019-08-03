@@ -6,7 +6,7 @@ import android.util.Log
 class Insert {
     private lateinit var Query: String
     private lateinit var tableName: String
-    private val connection = Connection.sqLiteDatabase
+    private val connection = Connection.db
 
     constructor(fields: Array<String>, values: Array<String>, tableName: String) {
 

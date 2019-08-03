@@ -7,6 +7,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import ir.dustdar.roloquent.Exceptions.DuplicateTableException
 import ir.dustdar.roloquent.Exceptions.InvalidTableException
 import org.junit.After
+import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import kotlin.Long.Companion.MAX_VALUE
@@ -16,7 +17,12 @@ import kotlin.Long.Companion.MAX_VALUE
 class AddTableTest {
 
     data class TblTestDuplicateTable(@Field(length = MAX_VALUE) var id: Integer)
-    data class TblTestIntegerLength(@Field() var id: Integer)
+    data class TblTestIntegerLength(
+        @Field var id: Integer,
+        @Field var name: String,
+        @Field var family: String
+    )
+
     data class TblTestAutoIncerment(@Field(auto_increment = true) var id: Integer)
     data class TblAutoIncerment(@Field(auto_increment = true, primary_key = true) var id: Integer)
     data class TblNullablePrimaryKey(
@@ -57,9 +63,9 @@ class AddTableTest {
 
     @Test
     fun getTablesName() {
-        Log.e("TablesName", connection.getTablesName().toString())
+        Log.e("TablesName", Connection.getTablesName().toString())
     }
-
+    @Test
     fun removeTable() {
         connection.removeTableIfExists(TblNullablePrimaryKey::class.java)
         connection.removeTableIfExists(TblTestAutoIncerment::class.java)

@@ -12,9 +12,9 @@ import ir.dustdar.roloquent.Exceptions.*
 open class Connection(private val context: Context, dbname: String) {
     private val databaseFile: String = context.getDatabasePath(dbname).path
     init {
-        sqLiteDatabase = context.openOrCreateDatabase(databaseFile, Context.MODE_PRIVATE, null)
+        db = context.openOrCreateDatabase(databaseFile, Context.MODE_PRIVATE, null)
         try {
-            sqLiteDatabase.version = context.packageManager.getPackageInfo(context.packageName, 0).versionCode
+            db.version = context.packageManager.getPackageInfo(context.packageName, 0).versionCode
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
         }
@@ -34,21 +34,11 @@ open class Connection(private val context: Context, dbname: String) {
         mOutputStream.close()
         mInputStream.close()
     }
-    fun getTablesName(): ArrayList<String> {
-        val list: ArrayList<String> = ArrayList()
-        var cursor = sqLiteDatabase.rawQuery(
-            "SELECT name FROM sqlite_master WHERE type ='table' AND name NOT LIKE 'sqlite_%';",
-            null
-        )
-        while (cursor.moveToNext()) {
-            list.add(cursor.getString(cursor.getColumnIndex("name")))
-        }
-        return list
-    }
+
     private var tables: ArrayList<Class<*>> = ArrayList()
     fun addTableIfNotExists(table: Class<*>) {
         try {
-            sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS" + table.getQuery())
+            db.execSQL("CREATE TABLE IF NOT EXISTS" + table.getQuery())
         } catch (e: SQLException) {
             Log.e("ErrorOnCreateTable", e.toString())
         } finally {
@@ -65,7 +55,7 @@ open class Connection(private val context: Context, dbname: String) {
                 )
             tables.add(table)
             try {
-                sqLiteDatabase.execSQL("CREATE TABLE " + table.getQuery())
+                db.execSQL("CREATE TABLE " + table.getQuery())
             } catch (e: SQLException) {
                 Log.e("ErrorOnCreateTable", e.toString())
             } finally {
@@ -78,7 +68,7 @@ open class Connection(private val context: Context, dbname: String) {
     }
     fun removeTableIfExists(table: Class<*>) {
         try {
-            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS `${table.name}`;")
+            db.execSQL("DROP TABLE IF EXISTS `${table.name}`;")
         } catch (e: SQLException) {
             Log.e("ErrorOnCreateTable", e.toString())
         } finally {
@@ -96,7 +86,7 @@ open class Connection(private val context: Context, dbname: String) {
                         "Each table can only be Create once.\n" +
                         "please use addTablesIfNotExists to add Table")
         try {
-            sqLiteDatabase.execSQL("DROP TABLE `${table.name}`;")
+            db.execSQL("DROP TABLE `${table.name}`;")
         } catch (e: SQLException) {
             Log.e("ErrorOnCreateTable", e.toString())
         } finally {
@@ -114,7 +104,18 @@ open class Connection(private val context: Context, dbname: String) {
                 '}'.toString()
     }
     companion object {
+        fun getTablesName(): ArrayList<String> {
+            val list: ArrayList<String> = ArrayList()
+            var cursor = db.rawQuery(
+                "SELECT name FROM sqlite_master WHERE type ='table' AND name NOT LIKE 'sqlite_%';",
+                null
+            )
+            while (cursor.moveToNext()) {
+                list.add(cursor.getString(cursor.getColumnIndex("name")))
+            }
+            return list
+        }
         private val INT = 1024
-        internal lateinit var sqLiteDatabase: SQLiteDatabase
+        lateinit var db: SQLiteDatabase
     }
 }

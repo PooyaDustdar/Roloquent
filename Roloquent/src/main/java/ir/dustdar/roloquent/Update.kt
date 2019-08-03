@@ -3,7 +3,7 @@ package ir.dustdar.roloquent
 
 class Update(private val tableName: String) {
     private var Query: String? = null
-    private val connection = Connection.sqLiteDatabase
+    private val connection = Connection.db
 
     fun setValues(field: String, value: String): Update {
         Query = "UPDATE `$tableName` SET `$field`=\"$value\""

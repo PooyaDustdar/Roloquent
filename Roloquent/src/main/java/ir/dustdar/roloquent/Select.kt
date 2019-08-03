@@ -9,7 +9,7 @@ class Select internal constructor(Filed: String, tableName: String) {
     var query: String? = null
         private set
 
-    private val connection = Connection.sqLiteDatabase
+    private val connection = Connection.db
 
     val cursor: Cursor
         get() = connection.rawQuery(query, null)
