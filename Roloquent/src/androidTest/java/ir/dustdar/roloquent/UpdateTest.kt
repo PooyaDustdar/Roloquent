@@ -4,13 +4,14 @@ import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.After
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4::class)
-class SelectTest {
+class UpdateTest {
 
     @Before
     fun before() {
@@ -26,36 +27,17 @@ class SelectTest {
     }
 
     @Test
-    fun selectAll() {
-        var selectedall = Select(AddTableTest.TblTestIntegerLength::class.java).list
-    }
-
-    @Test
-    fun selectRow() {
-        var selected = Select(
-            AddTableTest.TblTestIntegerLength::class.java,
-            arrayListOf("id", "name")
+    fun updateAfterSelect() {
+        val data = AddTableTest.TblTestIntegerLength()
+        data.id = Integer(9)
+        val update = Select(AddTableTest.TblTestIntegerLength::class.java,
+            "id",
+            Where("family", value = "nasrabadi")
+        ).Update(data)
+        val listafterupdate = Select(AddTableTest.TblTestIntegerLength::class.java,
+            Where("family", value = "nasrabadi")
         ).list
-    }
-
-    @Test
-    fun selectColumn() {
-        var selected = Select(
-            AddTableTest.TblTestIntegerLength::class.java, "id", Where("id", value = 5)
-        ).list
-    }
-
-    @Test
-    fun selectColumnRow() {
-        var selected = Select(
-            AddTableTest.TblTestIntegerLength::class.java,
-            arrayListOf("id", "name"),
-            arrayListOf(
-                Where("id", value = 5),
-                WhereOr("family", value = "nasrabadi"),
-                Where("name", value = "ali")
-            )
-        ).list
+        Assert.assertEquals(9, listafterupdate!![0].id)
     }
 
     @After

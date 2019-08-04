@@ -2,7 +2,7 @@ package ir.dustdar.roloquent
 
 import java.util.ArrayList
 
-class SelectedList<T> : ArrayList<Any> {
+class SelectedList<T> : ArrayList<T> {
 
     constructor() : super()
     constructor(initialCapacity: Int) : super(initialCapacity)

@@ -17,11 +17,21 @@ import kotlin.Long.Companion.MAX_VALUE
 class AddTableTest {
 
     data class TblTestDuplicateTable(@Field(length = MAX_VALUE) var id: Integer)
-    data class TblTestIntegerLength(
-        @Field var id: Integer,
-        @Field var name: String,
-        @Field var family: String
-    )
+    class TblTestIntegerLength{
+        constructor(id: Int, name: String, family: String){
+            this.id = Integer(id)
+            this.name = name
+            this.family = family
+        }
+        constructor()
+
+        @Field(primary_key = true)
+        public var id: Integer = Integer(0)
+        @Field
+        public var name: String = ""
+        @Field
+        public var family: String = ""
+    }
 
     data class TblTestAutoIncerment(@Field(auto_increment = true) var id: Integer)
     data class TblAutoIncerment(@Field(auto_increment = true, primary_key = true) var id: Integer)

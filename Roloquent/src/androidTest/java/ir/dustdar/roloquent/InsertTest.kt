@@ -10,12 +10,13 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class InsertTest {
+
     @Test
     fun insertArrayOfItems() {
         Insert(
             arrayOf(
-                AddTableTest.TblTestIntegerLength(Integer(5),"pooya","dustdar"),
-                AddTableTest.TblTestIntegerLength(Integer(6),"mohammad","nasrabadi")
+                AddTableTest.TblTestIntegerLength(5,"pooya","dustdar"),
+                AddTableTest.TblTestIntegerLength(6,"mohammad","nasrabadi")
             )
         )
     }
@@ -23,7 +24,7 @@ class InsertTest {
     @Test
     fun insertItem() {
         Insert(
-            AddTableTest.TblTestIntegerLength(Integer(7),"ali","nasrabadi")
+            AddTableTest.TblTestIntegerLength(7,"ali","nasrabadi")
         )
     }
 

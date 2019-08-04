@@ -1,169 +1,172 @@
 package ir.dustdar.roloquent
 
+import android.database.sqlite.SQLiteException
+import com.google.gson.Gson
 
-import android.database.Cursor
-
-
-class Select internal constructor(Filed: String, tableName: String) {
-    private var postions: Int? = null
-    var query: String? = null
-        private set
-
-    private val connection = Connection.db
-
-    val cursor: Cursor
-        get() = connection.rawQuery(query, null)
-
-    init {
-        query = "SELECT $Filed FROM `$tableName`"
-    }
-
-    fun where(filed: String, value: String): Select {
-        return where(filed, "=", value)
-    }
-
-    fun where(filed: String, operator: String, value: String): Select {
-        if (query != null) {
-            query += " WHERE `$filed`$operator \"$value\""
-        }
-        return this
-    }
-
-    fun andWhere(filed: String, value: String): Select {
-        return andWhere(filed, "=", value)
-    }
-
-    fun andWhere(filed: String, operator: String, value: String): Select {
-        if (query != null) {
-            query += " AND `$filed`$operator \"$value\""
-        }
-        return this
-    }
-
-    fun orWhere(filed: String, operator: String, value: String): Select {
-        if (query != null) {
-            query += " or `$filed`$operator \"$value\""
-        }
-        return this
-    }
-
-    fun getString(value: String): String? {
-        return getString(null, value, null)
-    }
-
-    fun getString(value: String, DefualtValue: String): String? {
-        return getString(null, value, DefualtValue)
-    }
-
-    fun getString(postion: Int?, value: String, DefualtValue: String?): String? {
-        val cursor = cursor
-        val index = cursor.getColumnIndex(value)
-        if (postion != null && postion >= 0) {
-            if (cursor.move(postion)) {
-                postions = cursor.position
-                return cursor.getString(index)
-            }
-            return DefualtValue
-        } else {
-            return if (postions == null) {
-                if (cursor.moveToFirst()) {
-                    postions = cursor.position
-                    return cursor.getString(index)
-                }
-                DefualtValue
-            } else {
-                if (cursor.move(postions!!)) {
-                    postions = postions!! + 1
-                    cursor.getString(index)
-                } else DefualtValue
-            }
-
-        }
-    }
-
-    @JvmOverloads
-    fun getStringPosion(postion: PosionSelector, value: String, DefualtValue: String? = null): String? {
-        val cursor = cursor
-        when (postion) {
-            Select.PosionSelector.First -> if (cursor.moveToFirst()) {
-                return cursor.getString(cursor.getColumnIndex(value))
-            }
-            Select.PosionSelector.Last -> if (cursor.moveToLast()) {
-                return cursor.getString(cursor.getColumnIndex(value))
-            }
-        }
-        return if (cursor.moveToFirst()) {
-            cursor.getString(cursor.getColumnIndex(value))
-        } else DefualtValue
+class Select<T : Any> {
+    private var kclass: Class<T>
+    private var options: ArrayList<Option> = ArrayList()
+    private var fields: ArrayList<String> = arrayListOf("*")
+    private var classInstans: T
 
 
-    }
-
-    fun getIntegre(value: String): Int? {
-        return getIntegre(null, value, null)
-    }
-
-    fun getIntegre(value: String, DefualtValue: Int?): Int? {
-        return getIntegre(null, value, DefualtValue)
-    }
-
-    @JvmOverloads
-    fun getIntegrePosion(postion: PosionSelector, value: String, DefualtValue: Int? = null): Int? {
-        val cursor = cursor
-        var returner = DefualtValue!!
-        when (postion) {
-            Select.PosionSelector.First -> {
-                if (cursor.moveToFirst()) {
-                    returner = cursor.getInt(cursor.getColumnIndex(value))
-                }
-                return returner
-            }
-            Select.PosionSelector.Last -> {
-                if (cursor.moveToLast()) {
-                    returner = cursor.getInt(cursor.getColumnIndex(value))
-                }
-                return returner
-            }
-        }
-        return if (cursor.moveToFirst()) {
-            cursor.getInt(cursor.getColumnIndex(value))
-        } else DefualtValue
-
-
-    }
-
-    fun getIntegre(postion: Int?, value: String, DefualtValue: Int?): Int? {
-        val cursor = cursor
-        if (postion != null && postion >= 0) {
-            if (cursor.move(postion)) {
-                postions = cursor.position
-                return cursor.getInt(cursor.getColumnIndex(value))
-            }
-        } else {
-            if (postions == null) {
-                if (cursor.moveToFirst()) {
-                    postions = cursor.position
-                    return cursor.getInt(cursor.getColumnIndex(value))
-                }
-            } else {
-                if (cursor.move(postions!!)) {
-                    postions = postions!! + 1
-                    return cursor.getInt(cursor.getColumnIndex(value))
+    private val where: String
+        get() {
+            var whereBuilder = ""
+            if (options.size > 0) {
+                options.forEach {
+                    if (it::class.java.name == "ir.dustdar.roloquent.WhereOr") {
+                        if (whereBuilder == "") {
+                            throw Exceptions.InvaleidSelectQuery("you can't use WhereOr in first option")
+                        } else {
+                            whereBuilder += " OR `${it.column}` ${it.Oprator} '${it.value}'"
+                        }
+                    } else if (it::class.java.name == "ir.dustdar.roloquent.Where") {
+                        whereBuilder += if (whereBuilder.isEmpty()) {
+                            "WHERE `${it.column}` ${it.Oprator} '${it.value}'"
+                        } else {
+                            " AND `${it.column}` ${it.Oprator} '${it.value}'"
+                        }
+                    }
                 }
             }
-
+            return whereBuilder
         }
-        return DefualtValue
-    }
 
-    fun like(search: String): Select {
-        if (query != null) {
-            query += " WHERE  "
+    private val selectQuery: String
+        get() {
+            var filds = ""
+            fields.forEach {
+                filds += "$it,"
+            }
+            if (!filds.isEmpty())
+                filds = filds.substring(0, filds.length - 1)
+
+            return "SELECT $filds FROM `${kclass.name}` $where;"
         }
-        return this
+
+    private val updateQuery: String
+        get() {
+            var fieldsData = ""
+            fields.forEach {
+                val field = kclass.getDeclaredField(it)
+                field.isAccessible = true
+
+                val value = field.get(classInstans)
+                fieldsData += when (value) {
+                    is String -> "`$it` = '$value',"
+                    is Int -> "`$it` =$value,"
+                    else -> ""
+                }
+            }
+            fieldsData = fieldsData.substring(0, fieldsData.length - 1)
+
+            return "UPDATE `${kclass.name}` SET $fieldsData $where;"
+        }
+
+
+    val list: ArrayList<T>?
+        get() {
+            val retention: ArrayList<T> = ArrayList()
+            val array: ArrayList<String> = connection.getTablesName()
+            if (kclass.name in array) {
+                val cursor = connection.db.rawQuery(selectQuery, null)
+                if (cursor.moveToFirst())
+                    do {
+                        val gson = Gson()
+                        var json = "{"
+                        cursor.columnNames.forEach {
+                            val columnIndex = cursor.getColumnIndex(it)
+                            val value = cursor.getString(columnIndex)
+                            json += "\"$it\":\"$value\","
+                        }
+                        json = json.substring(0, json.length - 1)
+                        json += "}"
+                        val gsondata = gson.fromJson(json, kclass)
+                        retention.add(gsondata)
+                    } while (cursor.moveToNext())
+                return retention
+            } else
+                throw Exceptions.TableNotFoundException("Table '${kclass.name}' is not found.")
+        }
+
+
+    fun Update(data: T): Boolean {
+        classInstans = data
+        return try {
+            connection.db.execSQL(updateQuery)
+            true
+        } catch (e: SQLiteException) {
+            false
+        }
+
     }
 
-    enum class PosionSelector {
-        Last, First
+    constructor(classIndet: Class<T>) {
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
     }
+
+    constructor(classIndet: Class<T>, fields: ArrayList<String>) {
+        this.fields = fields
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+
+    }
+
+    constructor(classIndet: Class<T>, options: List<Option>) {
+        this.options = ArrayList(options)
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+
+    }
+
+    constructor(classIndet: Class<T>, field: String) {
+        this.fields.add(field)
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+
+    }
+
+    constructor(classIndet: Class<T>, option: Option?) {
+        if (option != null)
+            this.options.add(option)
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+    }
+
+    constructor(
+        classIndet: Class<T>,
+        fields: ArrayList<String> = ArrayList(),
+        options: ArrayList<Option> = ArrayList()
+    ) {
+        this.options = options
+        this.fields = fields
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+    }
+
+    constructor(classIndet: Class<T>, fields: ArrayList<String> = ArrayList(), option: Option? = null) {
+        if (option != null)
+            this.options.add(option)
+        this.fields = fields
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+    }
+
+    constructor(classIndet: Class<T>, field: String = "*", options: ArrayList<Option> = ArrayList()) {
+        this.options = options
+        fields = arrayListOf(field)
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+    }
+
+    constructor(classIndet: Class<T>, field: String = "*", option: Option? = null) {
+        if (option != null)
+            this.options.add(option)
+        fields = arrayListOf(field)
+        this.kclass = classIndet
+        this.classInstans = classIndet.newInstance()
+    }
+
 }
