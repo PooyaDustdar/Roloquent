@@ -64,6 +64,10 @@ class Select<T : Any> {
             return "UPDATE `${kclass.name}` SET $fieldsData $where;"
         }
 
+    private val removeQuery: String
+        get() {
+            return "DELETE FROM `${kclass.name}` $where;"
+        }
 
     val list: ArrayList<T>?
         get() {
@@ -95,6 +99,17 @@ class Select<T : Any> {
         classInstans = data
         return try {
             connection.db.execSQL(updateQuery)
+            true
+        } catch (e: SQLiteException) {
+            false
+        }
+
+    }
+
+
+    fun Remove(): Boolean {
+        return try {
+            connection.db.execSQL(removeQuery)
             true
         } catch (e: SQLiteException) {
             false
