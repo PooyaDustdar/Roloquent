@@ -24,13 +24,23 @@ class RemoveTest {
 
             )
         )
+        InsertOrUpdate(
+            arrayOf(
+                AddTableTest.TblTestIntegerLength(5, "mohammad", "nasrabadi"),
+                AddTableTest.TblTestIntegerLength(7, "ali", "dustdar"),
+                AddTableTest.TblTestIntegerLength(6, "pooya", "nasrabadi")
+
+
+            )
+        )
     }
 
     @Test
     fun updateAfterSelect() {
         val data = AddTableTest.TblTestIntegerLength()
         data.id = Integer(9)
-        val update = Select(AddTableTest.TblTestIntegerLength::class.java,
+        val update = Select(
+            AddTableTest.TblTestIntegerLength::class.java,
             "id",
             Where("family", value = "nasrabadi")
         ).Remove()

@@ -32,3 +32,30 @@ inline fun <reified T : Any> Insert(date: Array<T>) {
     connection.db.execSQL(Query)
 }
 
+
+inline fun <reified T : Any> InsertOrUpdate(date: T) {
+    InsertOrUpdate(arrayOf(date))
+}
+
+inline fun <reified T : Any> InsertOrUpdate(date: Array<T>) {
+    var Query = "INSERT OR REPLACE INTO `${T::class.java.name}` ("
+    T::class.java.declaredFields.forEach {
+        Query += "`" + it.name + "`,"
+    }
+    Query = Query.substring(0, Query.length - 1)
+    Query += ") VALUES "
+    date.forEach { itis ->
+        Query += "("
+        val fields = itis::class.java.declaredFields
+        fields.forEach {
+            it.isAccessible = true
+            val value = it.get(itis)
+            Query += "'$value',"
+        }
+        Query = Query.substring(0, Query.length - 1) + "),"
+    }
+    Query = Query.substring(0, Query.length - 1) + ";"
+    connection.db.execSQL(Query)
+}
+
+
